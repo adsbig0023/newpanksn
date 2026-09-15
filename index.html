@@ -1,281 +1,559 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '968969892140991');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=968969892140991&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Zero To Hero | Free Telegram Channel</title>
+<meta charset="UTF-8">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+
+<meta name="theme-color" content="#f4f8f5">
+
+<title>Stock Market Community</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+
+    min-height:100dvh;
+    min-height:100svh;
+
+    background:
+    radial-gradient(
+        circle at 90% 0%,
+        #ddf5e8,
+        transparent 37%
+    ),
+    #f3f7f4;
+
+    color:#122019;
+
+    font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+    overflow-x:hidden;
+}
+
+.page{
+
+    min-height:100dvh;
+    min-height:100svh;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:
+    max(18px,env(safe-area-inset-top))
+    15px
+    max(12px,env(safe-area-inset-bottom));
+}
+
+.card{
+
+    width:100%;
+    max-width:460px;
+
+    padding:28px 21px 17px;
+
+    border-radius:31px;
+
+    background:#fff;
+
+    border:
+    1px solid rgba(20,80,45,.06);
+
+    box-shadow:
+    0 30px 75px
+    rgba(23,71,42,.11);
+
+    text-align:center;
+
+    animation:cardIn .65s ease both;
+}
+
+.logo{
+
+    width:79px;
+    height:79px;
+
+    margin:
+    0 auto 18px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    background:#0a9d58;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:
+    0 15px 32px
+    rgba(11,157,88,.18);
+}
+
+.logo img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.logo span{
+
+    color:#fff;
+
+    font-size:29px;
+
+    font-weight:900;
+}
+
+.badge{
+
+    display:block;
+
+    width:max-content;
+
+    margin:
+    0 auto 16px;
+
+    padding:8px 12px;
+
+    border-radius:50px;
+
+    background:#e7f8ee;
+
+    color:#087c46;
+
+    font-size:9px;
+
+    font-weight:850;
+
+    letter-spacing:.4px;
+}
+
+h1{
+
+    font-size:
+    clamp(31px,8vw,44px);
+
+    line-height:1.05;
+
+    letter-spacing:-1.8px;
+
+    margin-bottom:14px;
+}
+
+h1 span{
+
+    color:#079653;
+}
+
+.desc{
+
+    max-width:370px;
+
+    margin:auto;
+
+    color:#748079;
+
+    font-size:14px;
+
+    line-height:1.65;
+}
+
+.list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    margin:23px 0;
+}
+
+.item{
+
+    display:flex;
+
+    align-items:center;
+
+    text-align:left;
+
+    gap:11px;
+
+    padding:11px;
+
+    border-radius:16px;
+
+    background:#f7faf8;
+
+    border:
+    1px solid #edf2ee;
+}
+
+.icon{
+
+    width:39px;
+    height:39px;
+
+    flex:0 0 39px;
+
+    border-radius:12px;
+
+    background:#e5f7ed;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:17px;
+}
+
+.item strong{
+
+    display:block;
+
+    font-size:12px;
+
+    margin-bottom:2px;
+}
+
+.item small{
+
+    color:#87918b;
+
+    font-size:9px;
+
+    line-height:1.4;
+}
+
+.telegram{
+
+    min-height:59px;
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    border-radius:17px;
+
+    background:#0b9d58;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    font-weight:800;
+
+    box-shadow:
+    0 15px 30px
+    rgba(11,157,88,.18);
+
+    transition:.18s ease;
+}
+
+.telegram:active{
+
+    transform:scale(.97);
+}
+
+.telegram-icon{
+
+    font-size:21px;
+}
+
+.disclaimer{
+
+    margin-top:13px;
+
+    color:#9aa39d;
+
+    font-size:9px;
+
+    line-height:1.5;
+}
+
+
+/* SNOW ADS CREDIT */
+
+.agency{
+
+    margin-top:17px;
+
+    padding-top:12px;
+
+    border-top:
+    1px solid #edf0ee;
+
+    font-size:8px;
+
+    color:#9ba39e;
+}
+
+.agency a{
+
+    color:#69746d;
+
+    text-decoration:none;
+
+    font-weight:800;
+}
+
+.agency a:hover{
+
+    color:#0b9d58;
+}
+
+@keyframes cardIn{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(24px)
+        scale(.98);
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b1220;
-      color: #ffffff;
-      min-height: 100vh;
-      padding: 18px;
+    to{
+        opacity:1;
+        transform:none;
     }
 
-    .container {
-      max-width: 680px;
-      margin: auto;
-      background: #1a2235;
-      border: 1px solid #303a50;
-      border-radius: 28px;
-      padding: 48px 28px 35px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.25);
-      text-align: center;
-    }
+}
 
-    .logo {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      background: #fff;
-      border: 3px solid #ffd900;
-      margin-bottom: 35px;
-    }
+</style>
 
-    h1 {
-      color: #ffd900;
-      font-size: 36px;
-      font-weight: 800;
-      margin-bottom: 22px;
-    }
-
-    .category {
-      font-size: 25px;
-      font-weight: 700;
-      color: #f1f1f1;
-      margin-bottom: 28px;
-    }
-
-    .subtitle {
-      color: #c9ccd5;
-      font-size: 21px;
-      line-height: 1.5;
-      margin-bottom: 32px;
-    }
-
-    .join-btn {
-      display: block;
-      width: 100%;
-      background: #20c85a;
-      color: #000;
-      text-decoration: none;
-      font-size: 24px;
-      font-weight: 800;
-      padding: 25px 15px;
-      border-radius: 16px;
-      margin: 18px 0;
-      transition: 0.2s;
-    }
-
-    .join-btn:hover {
-      transform: scale(1.02);
-      background: #26d965;
-    }
-
-    .trust-box {
-      background: #153a43;
-      border: 1px solid #17656c;
-      border-radius: 17px;
-      padding: 22px 15px;
-      margin: 20px 0 28px;
-      color: #f3f3f3;
-      font-size: 20px;
-      line-height: 1.7;
-    }
-
-    .features {
-      text-align: left;
-      margin: 20px 0;
-    }
-
-    .feature {
-      font-size: 21px;
-      color: #f4f4f4;
-      margin: 22px 0;
-      line-height: 1.4;
-    }
-
-    .closing {
-      color: #ffd900;
-      font-size: 20px;
-      margin-top: 25px;
-    }
-
-    .community {
-      color: #bfc3cc;
-      font-size: 18px;
-      margin-top: 27px;
-    }
-
-    .risk {
-      color: #9da3af;
-      font-size: 16px;
-      margin-top: 25px;
-    }
-
-    .powered {
-      margin-top: 42px;
-      color: #aeb3bd;
-      font-size: 19px;
-    }
-
-    .powered a {
-      color: #2185bd;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
-    @media (max-width: 500px) {
-      body {
-        padding: 10px;
-      }
-
-      .container {
-        padding: 52px 16px 30px;
-        border-radius: 25px;
-      }
-
-      .logo {
-        width: 140px;
-        height: 140px;
-        margin-bottom: 30px;
-      }
-
-      h1 {
-        font-size: 34px;
-      }
-
-      .category {
-        font-size: 23px;
-      }
-
-      .subtitle {
-        font-size: 20px;
-      }
-
-      .join-btn {
-        font-size: 22px;
-        padding: 23px 10px;
-      }
-
-      .feature {
-        font-size: 20px;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <div class="container">
+<main class="page">
 
-    <!-- LOGO -->
-    <img src="logo.png" class="logo" alt="Zero To Hero Logo">
+<section class="card">
 
-    <h1>PANKAJ BHARDWAJ</h1>
 
-    <div class="category">
-      NIFTY • BANKNIFTY • OPTIONS
+    <!-- CLIENT LOGO -->
+
+    <div class="logo">
+
+        <img
+        src="logo.png"
+        alt="Client Logo"
+        onerror="
+        this.style.display='none';
+        this.parentElement.innerHTML='<span>₹</span>';
+        "
+        >
+
     </div>
 
-    <div class="subtitle">
-      Daily Intraday Trading Signals &amp; Analysis
+
+    <span class="badge">
+
+        STOCK MARKET COMMUNITY
+
+    </span>
+
+
+    <h1>
+
+        Understand Markets.<br>
+
+        <span>Build Knowledge.</span>
+
+    </h1>
+
+
+    <p class="desc">
+
+        Join our Telegram community for market
+        updates, educational resources and
+        trading discussions.
+
+    </p>
+
+
+    <div class="list">
+
+
+        <div class="item">
+
+            <div class="icon">
+                📈
+            </div>
+
+            <div>
+
+                <strong>
+                    Market Updates
+                </strong>
+
+                <small>
+                    Follow important market movements
+                    and developments.
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="icon">
+                📊
+            </div>
+
+            <div>
+
+                <strong>
+                    Chart Discussions
+                </strong>
+
+                <small>
+                    Learn how traders study charts
+                    and price action.
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="item">
+
+            <div class="icon">
+                🎓
+            </div>
+
+            <div>
+
+                <strong>
+                    Trading Education
+                </strong>
+
+                <small>
+                    Improve your understanding of
+                    financial markets.
+                </small>
+
+            </div>
+
+        </div>
+
+
     </div>
 
-    <!-- FIRST TELEGRAM BUTTON -->
+
+    <!-- CLIENT TELEGRAM -->
+
     <a
-      href="https://t.me/+6XwwIMP5Ezc2OTg1"
-      class="join-btn"
-      target="_blank"
-      rel="noopener noreferrer">
-      🚀 Join Free Telegram Channel
+    id="telegramButton"
+    class="telegram"
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+    >
+
+        <span class="telegram-icon">
+            ✈
+        </span>
+
+        Join Telegram Community
+
     </a>
 
-    <!-- TRUST BOX -->
-    <div class="trust-box">
-      ✓ Trusted by 5,000+ Traders<br>
-      ✓ Daily Consistent Setups
+
+    <p class="disclaimer">
+
+        Educational content only.
+        Markets involve risk.
+
+    </p>
+
+
+    <!-- SNOW ADS -->
+
+    <div class="agency">
+
+        Ads managed by
+
+        <a
+        id="agencyLink"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        >
+
+        Snow Ads Agency
+
+        </a>
+
     </div>
 
-    <!-- FEATURES -->
-    <div class="features">
 
-      <div class="feature">
-        ✓ 5–7 High Probability Trades
-      </div>
+</section>
 
-      <div class="feature">
-        ✓ Exact Entry, SL &amp; Target
-      </div>
+</main>
 
-      <div class="feature">
-        ✓ Beginner Friendly Guidance
-      </div>
 
-      <div class="feature">
-        ✓ Live Market Updates
-      </div>
+<script>
 
-    </div>
+/* CLIENT TELEGRAM LINK */
 
-    <!-- SECOND TELEGRAM BUTTON -->
-    <a
-      href="https://t.me/+6XwwIMP5Ezc2OTg1"
-      class="join-btn"
-      target="_blank"
-      rel="noopener noreferrer">
-      🚀 Join Free Telegram Channel
-    </a>
+const TELEGRAM_LINK =
+"https://t.me/YOUR_CLIENT_TELEGRAM";
 
-    <div class="closing">
-      ⏳ Free Access Closing Soon
-    </div>
 
-    <div class="community">
-      📈 Limited Seats • Active Community
-    </div>
+/* SNOW ADS AGENCY LINK */
 
-    <div class="risk">
-      ⚠ Market investments are subject to risk
-    </div>
+const AGENCY_LINK =
+"https://YOUR-SNOW-AGENCY-LINK.com";
 
-    <div class="powered">
-      Powered by
-      <a href="https://telegram.me/+gZcHbMz22XcyN2Y1"
-         target="_blank"
-         rel="noopener noreferrer">
-        Snowads
-      </a>
-    </div>
 
-  </div>
+document.getElementById("telegramButton").href =
+TELEGRAM_LINK;
+
+document.getElementById("agencyLink").href =
+AGENCY_LINK;
+
+</script>
 
 </body>
+
 </html>
+```
